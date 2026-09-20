@@ -1,8 +1,26 @@
+---
+import { Image } from "astro:assets";
+import profileImage from "../assets/images/profile/profile-khanaphoz.jpg";
+---
+
 <section id="about" class="section about-section">
 
   <div class="container">
 
     <div class="about-grid">
+
+      <figure class="about-portrait reveal">
+        <Image
+          src={profileImage}
+          alt="Khanaphoz — Technology, Systems and Automation"
+          width={800}
+          height={1000}
+          fit="cover"
+          loading="lazy"
+        />
+      </figure>
+
+      <div class="about-copy">
 
       <div class="about-title reveal">
 
@@ -56,6 +74,8 @@
           </div>
 
         </div>
+
+      </div>
 
       </div>
 

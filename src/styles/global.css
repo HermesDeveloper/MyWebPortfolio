@@ -1474,9 +1474,40 @@ img {
   display: grid;
 
   grid-template-columns:
-    0.9fr 1.1fr;
+    0.618fr 1fr;
 
-  gap: 100px;
+  gap: 55px;
+}
+
+.about-portrait {
+  margin: 0;
+
+  align-self: start;
+
+  aspect-ratio: 4 / 5;
+
+  overflow: hidden;
+
+  border:
+    1px solid var(--border);
+}
+
+.about-portrait img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.4s var(--ease);
+}
+
+.about-portrait:hover img {
+  transform: scale(1.015);
+}
+
+.about-copy {
+  min-width: 0;
 }
 
 .about-title h2 {
@@ -1498,7 +1529,7 @@ img {
 }
 
 .about-content {
-  padding-top: 50px;
+  padding-top: 34px;
 }
 
 .about-large {
@@ -1840,9 +1871,10 @@ img {
   }
 
   .about-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      0.618fr 1fr;
 
-    gap: 40px;
+    gap: 34px;
   }
 
   .about-content {
@@ -2027,6 +2059,12 @@ img {
 
   .about-title h2 {
     font-size: clamp(42px, 10vw, var(--text-2xl));
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
   }
 
   .about-large {
