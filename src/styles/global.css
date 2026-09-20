@@ -69,22 +69,35 @@ img {
 
 :root {
 
-  /* Typography: Golden Ratio scale (1 : 1.618) */
+  /* =======================================================
+     TYPOGRAPHY
+     Golden Ratio Scale — Base 16px × 1.618
+     ======================================================= */
+
   --type-ratio: 1.618;
+
+  /* UI / Utility */
   --text-xs: 12px;
   --text-sm: 14px;
-  --text-base: 16px;
-  --text-lg: 26px;
-  --text-xl: 42px;
-  --text-2xl: 68px;
-  --text-3xl: 110px;
 
+  /* Golden Ratio Scale */
+  --text-base: 16px;  /* Base */
+  --text-lg: 26px;    /* 16 × 1.618 ≈ 26 */
+  --text-xl: 42px;    /* 26 × 1.618 ≈ 42 */
+  --text-2xl: 68px;   /* 42 × 1.618 ≈ 68 */
+  --text-3xl: 110px;  /* 68 × 1.618 ≈ 110 */
+
+  /* Font Weights */
   --font-label: 600;
   --font-navigation: 600;
   --font-body: 400;
   --font-lead: 400;
   --font-heading: 600;
   --font-display: 700;
+
+  /* =======================================================
+     COLORS
+     ======================================================= */
 
   --bg: #080808;
   --bg-soft: #0d0d0d;
@@ -102,6 +115,10 @@ img {
 
   --accent: #8b7cff;
   --accent-2: #52d8ff;
+
+  /* =======================================================
+     LAYOUT
+     ======================================================= */
 
   --max-width: 1280px;
 
@@ -335,7 +352,9 @@ img {
 }
 
 
-/* Mobile nav */
+/* =========================================================
+   MOBILE NAV
+========================================================= */
 
 .nav-toggle {
   display: none;
@@ -603,7 +622,9 @@ img {
 }
 
 
-/* Hero system */
+/* =========================================================
+   HERO SYSTEM
+========================================================= */
 
 .hero-system {
   display: flex;
@@ -620,7 +641,8 @@ img {
 
   display: grid;
 
-  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-rows:
+    auto minmax(0, 1fr) auto;
 
   overflow: hidden;
 
@@ -855,7 +877,8 @@ img {
 .system-footer {
   display: grid;
 
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:
+    1fr 1fr;
 
   border-top:
     1px solid var(--border);
@@ -1843,8 +1866,8 @@ img {
 
     margin-inline: auto;
   }
-
 }
+
 
 @media (max-width: 900px) {
 
@@ -1928,7 +1951,6 @@ img {
   .contact-grid {
     grid-template-columns: 1fr;
   }
-
 }
 
 
@@ -2138,7 +2160,6 @@ img {
   .footer-right {
     text-align: left;
   }
-
 }
 
 
@@ -2167,8 +2188,8 @@ img {
   .cursor-glow {
     display: none;
   }
-
 }
+
 
 @media (min-width: 1201px) {
 
@@ -2191,7 +2212,9 @@ img {
   }
 
   .hero-grid {
-    grid-template-columns: minmax(0, 720px) minmax(420px, 480px);
+    grid-template-columns:
+      minmax(0, 720px)
+      minmax(420px, 480px);
 
     justify-content: center;
 
@@ -2219,8 +2242,8 @@ img {
 
     justify-self: end;
   }
-
 }
+
 
 @media (max-width: 600px) {
 
