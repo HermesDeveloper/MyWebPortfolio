@@ -101,13 +101,18 @@
         <div class="system-footer">
 
           <div>
-            <small>STATUS</small>
-            <strong>OPERATIONAL</strong>
+            <small>UPTIME</small>
+            <strong>99.99%</strong>
           </div>
 
           <div>
-            <small>MODE</small>
-            <strong>ENGINEERING</strong>
+            <small>LATENCY</small>
+            <strong>14ms</strong>
+          </div>
+
+          <div>
+            <small>SYSTEM TIME</small>
+            <strong><time class="system-time" id="system-time" datetime=""></time></strong>
           </div>
 
         </div>
@@ -124,3 +129,33 @@
   </div>
 
 </section>
+
+<script>
+  const systemTime = document.querySelector<HTMLTimeElement>("#system-time");
+
+  if (systemTime) {
+    const bangkokFormatter = new Intl.DateTimeFormat("en-US", {
+      timeZone: "Asia/Bangkok",
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hourCycle: "h23",
+    });
+
+    const updateSystemTime = () => {
+      const now = new Date();
+      const parts = Object.fromEntries(
+        bangkokFormatter.formatToParts(now).map(({ type, value }) => [type, value]),
+      );
+
+      systemTime.dateTime = now.toISOString();
+      systemTime.textContent = `${parts.day} ${parts.month} ${parts.year}, ${parts.hour}:${parts.minute}:${parts.second} ICT`;
+    };
+
+    updateSystemTime();
+    window.setInterval(updateSystemTime, 1000);
+  }
+</script>
