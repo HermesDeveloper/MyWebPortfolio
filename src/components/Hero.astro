@@ -1,3 +1,7 @@
+---
+import TerrainVisual from "./TerrainVisual.astro";
+---
+
 <section class="hero">
 
   <div class="hero-background-grid"></div>
@@ -12,9 +16,9 @@
       </div>
 
       <h1 class="hero-title reveal">
-        I<br class="desktop-only-break" />
-        build <span>technology</span> that<br class="desktop-only-break" />
-        powers <span>real-world</span><br class="desktop-only-break" />
+        I <br class="desktop-only-break" />
+        build <span>technology</span> that <br class="desktop-only-break" />
+        powers <span>real-world </span><br class="desktop-only-break" />
         <span>business.</span>
       </h1>
 
@@ -40,86 +44,7 @@
     </div>
 
 
-    <div class="hero-system reveal">
-
-      <div class="system-window">
-
-        <div class="system-header">
-
-          <div class="window-dots">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-
-          <div class="system-label">
-            SYSTEM / OVERVIEW
-          </div>
-
-          <div class="system-live">
-            <span></span>
-            LIVE
-          </div>
-
-        </div>
-
-
-        <div class="system-body">
-
-          <div class="system-orbit">
-
-            <div class="orbit-ring ring-one"></div>
-            <div class="orbit-ring ring-two"></div>
-
-            <div class="core-node">
-              <div class="core-inner">
-                SYS
-              </div>
-            </div>
-
-            <div class="node node-one">
-              WEB
-            </div>
-
-            <div class="node node-two">
-              DB
-            </div>
-
-            <div class="node node-three">
-              API
-            </div>
-
-            <div class="node node-four">
-              AI
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="system-footer">
-
-          <div>
-            <small>UPTIME</small>
-            <strong>99.99%</strong>
-          </div>
-
-          <div>
-            <small>LATENCY</small>
-            <strong>14ms</strong>
-          </div>
-
-          <div>
-            <small>SYSTEM TIME</small>
-            <strong><time class="system-time" id="system-time" datetime=""></time></strong>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
+    <TerrainVisual className="hero-terrain reveal" />
 
   </div>
 
@@ -129,33 +54,3 @@
   </div>
 
 </section>
-
-<script>
-  const systemTime = document.querySelector<HTMLTimeElement>("#system-time");
-
-  if (systemTime) {
-    const bangkokFormatter = new Intl.DateTimeFormat("en-US", {
-      timeZone: "Asia/Bangkok",
-      day: "2-digit",
-      month: "short",
-      year: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-      hourCycle: "h23",
-    });
-
-    const updateSystemTime = () => {
-      const now = new Date();
-      const parts = Object.fromEntries(
-        bangkokFormatter.formatToParts(now).map(({ type, value }) => [type, value]),
-      );
-
-      systemTime.dateTime = now.toISOString();
-      systemTime.textContent = `${parts.day} ${parts.month} ${parts.year}, ${parts.hour}:${parts.minute}:${parts.second} ICT`;
-    };
-
-    updateSystemTime();
-    window.setInterval(updateSystemTime, 1000);
-  }
-</script>
