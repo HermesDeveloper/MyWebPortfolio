@@ -1588,8 +1588,21 @@ img {
   .capability-card { min-height: auto; padding: 24px; }
   .capability-number { margin-bottom: 28px; }
   .capability-card p { min-height: 0; }
-  .experience-layout { gap: 36px; }
-  .experience-intro { position: relative; min-height: 180px; }
+  .experience-layout {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: 36px;
+  }
+  .experience-intro {
+    position: relative;
+    top: auto;
+    align-self: stretch;
+    min-width: 0;
+    min-height: 0;
+    padding-block: 28px;
+  }
+  .intro-content { min-width: 0; }
+  .big-letter { left: 0; }
   .timeline-item { padding: 0 0 42px 22px; }
   .timeline-content h3 { font-size: clamp(1.5rem, 7vw, 2rem); }
   .timeline-label { letter-spacing: .08em; }
